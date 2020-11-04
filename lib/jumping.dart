@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 
 class JumpingMario extends StatelessWidget {
   final direction;
-  JumpingMario({this.direction});
+  final size;
+  JumpingMario({this.direction,this.size});
   @override
   Widget build(BuildContext context) {
     if(direction == "right"){
       return Container(
-        width: 50,
-        height: 50,
+        width: size,
+        height: size,
         child: Image.asset('images/mario.png'),
       );
     }else{
@@ -18,8 +19,8 @@ class JumpingMario extends StatelessWidget {
         alignment: Alignment.center,
         transform: Matrix4.rotationY(pi),
         child: Container(
-          width: 50,
-          height: 50,
+          width: size,
+          height: size,
           child: Image.asset('images/mario.png'),
         ),
       );
